@@ -1,0 +1,149 @@
+---
+import "../styles/global.css";
+import ProductCard from "../components/ProductCard.astro";
+import ServiceFeature from "../components/ServiceFeature.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+const products = [
+  {
+    title: "Wooden Blinds",
+    price: "From $200",
+    image: "/images/wooden-blinds.jpg",
+  },
+  {
+    title: "Roller Shades",
+    price: "From $150",
+    image: "/images/roller-shades.jpg",
+  },
+  {
+    title: "Roman Shades",
+    price: "From $250",
+    image: "/images/roman-shades.jpg",
+  },
+];
+
+const services = [
+  // { title: 'Free Delivery', subtitle: '', icon: 'fa-truck' },
+  {
+    title: "Instalación Profesional",
+    subtitle: "Instaladores profesionales con años de experiencia",
+    icon: "fa-screwdriver-wrench",
+  },
+  { title: "Garantia De Por Vida", subtitle: "", icon: "fa-award" },
+  {
+    title: "Financiamiento",
+    subtitle:
+      "Aceptamos cualquier metodo de pago y mensualidades sin intereses",
+    icon: "fa-credit-card",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Excelente servicio, excelentes precios!",
+    author: "Juan",
+    image: "/images/testimonial1.jpg",
+  },
+  {
+    quote: "Me encantan mis nuevas cortinas!",
+    author: "Emilia",
+    image: "/images/testimonial2.jpg",
+  },
+  {
+    quote: "El mejor lugar para comprar persianas.",
+    author: "David",
+    image: "/images/testimonial3.jpg",
+  },
+];
+---
+
+<html>
+  <head>
+    <title>Homeblinds</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body class="font-sans text-text bg-background">
+    <Header />
+
+    <section
+      class="banner bg-cover bg-center text-white text-center py-20"
+      style="background-image: url('/images/banner.jpg');"
+    >
+      <div class="max-w-xl mx-auto">
+        <h1 class="text-5xl font-bold mb-4">
+          Persianas, Cortinas y Toldos Personalizados
+        </h1>
+        <p class="text-lg mb-8">
+          Ofrecemos una gran selección de persianas, estores y contraventanas
+          personalizadas. Elija entre una variedad de estilos y colores para
+          encontrar los tratamientos de ventana perfectos para su hogar.
+        </p>
+
+        <button class="bg-secondary text-white py-2 px-4 rounded"
+          >Empezar</button
+        >
+      </div>
+    </section>
+
+    <section class="products py-10">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        {
+          products.map((product) => (
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              image={product.image}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="services py-10 bg-background text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-4">Why choose us</h2>
+        <p class="mb-8">
+          We’ve been serving the Bay Area since 1987. We are a certified Hunter
+          Douglas dealer and we offer free in-home consultations.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {
+            services.map((service) => (
+              <ServiceFeature
+                title={service.title}
+                subtitle={service.subtitle}
+                icon={service.icon}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials py-10">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {
+            testimonials.map((testimonial) => (
+              <Testimonial
+                quote={testimonial.quote}
+                author={testimonial.author}
+                image={testimonial.image}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>
