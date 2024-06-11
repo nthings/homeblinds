@@ -3,7 +3,11 @@ const { title, price, image } = Astro.props;
 ---
 
 <div class="product-card p-4 border rounded text-center">
-    <img class="w-full h-auto mb-4" src={image} alt={title} />
-    <h3 class="text-xl font-semibold mb-2">{title}</h3>
-    <p class="text-gray-700">{price}</p>
+    <a href="p/producto">
+        <div class="w-full h-64 overflow-hidden mb-4">
+            <img class="w-full h-full object-cover" src={image} alt={title} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">{title}</h3>
+        <p class="text-gray-700">{price}</p>
+    </a>
 </div>

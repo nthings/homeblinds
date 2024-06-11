@@ -1,26 +1,40 @@
 ---
 import "../styles/global.css";
+import SiteLayout from "../layouts/SiteLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import ServiceFeature from "../components/ServiceFeature.astro";
 import Testimonial from "../components/Testimonial.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 
 const products = [
   {
-    title: "Wooden Blinds",
-    price: "From $200",
-    image: "/images/wooden-blinds.jpg",
-  },
-  {
-    title: "Roller Shades",
-    price: "From $150",
+    title: "Enrollables",
+    price: "Desde $150 m2",
     image: "/images/roller-shades.jpg",
   },
   {
-    title: "Roman Shades",
-    price: "From $250",
+    title: "Sheer Elegance",
+    price: "Desde $150 m2",
+    image: "/images/sheer-blinds.jpg",
+  },
+  {
+    title: "Panel Japonés",
+    price: "Desde $550 m2",
+    image: "/images/panel.jpg",
+  },
+  {
+    title: "Horizontales de Madera",
+    price: "Desde $300 m2",
+    image: "/images/wooden-blinds.jpg",
+  },
+  {
+    title: "Romanas",
+    price: "Desde $250 m2",
     image: "/images/roman-shades.jpg",
+  },
+  {
+    title: "Toldos",
+    price: "Desde $1050 m2",
+    image: "/images/awning.jpg",
   },
 ];
 
@@ -31,7 +45,11 @@ const services = [
     subtitle: "Instaladores profesionales con años de experiencia",
     icon: "fa-screwdriver-wrench",
   },
-  { title: "Garantia De Por Vida", subtitle: "", icon: "fa-award" },
+  {
+    title: "Garantia De Por Vida",
+    subtitle: "Cobertura completa para tu tranquilidad",
+    icon: "fa-award",
+  },
   {
     title: "Financiamiento",
     subtitle:
@@ -59,91 +77,76 @@ const testimonials = [
 ];
 ---
 
-<html>
-  <head>
-    <title>Homeblinds</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body class="font-sans text-text bg-background">
-    <Header />
+<SiteLayout>
+  <header
+    class="banner bg-cover bg-center text-white text-center py-20"
+    style="background-image: url('/images/banner.jpg');"
+  >
+    <div class="max-w-xl mx-auto">
+      <h1 class="text-5xl font-bold mb-4">
+        Persianas, Cortinas y Toldos Personalizados
+      </h1>
+      <p class="text-lg mb-8">
+        Ofrecemos una gran selección de persianas, estores y contraventanas
+        personalizadas. Elija entre una variedad de estilos y colores para
+        encontrar los tratamientos de ventana perfectos para su hogar.
+      </p>
 
-    <section
-      class="banner bg-cover bg-center text-white text-center py-20"
-      style="background-image: url('/images/banner.jpg');"
+      <button class="bg-primary text-white py-2 px-4 rounded">Empezar</button>
+    </div>
+  </header>
+
+  <section class="products py-10">
+    <div
+      class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
     >
-      <div class="max-w-xl mx-auto">
-        <h1 class="text-5xl font-bold mb-4">
-          Persianas, Cortinas y Toldos Personalizados
-        </h1>
-        <p class="text-lg mb-8">
-          Ofrecemos una gran selección de persianas, estores y contraventanas
-          personalizadas. Elija entre una variedad de estilos y colores para
-          encontrar los tratamientos de ventana perfectos para su hogar.
-        </p>
+      {
+        products.map((product) => (
+          <ProductCard
+            title={product.title}
+            price={product.price}
+            image={product.image}
+          />
+        ))
+      }
+    </div>
+  </section>
 
-        <button class="bg-secondary text-white py-2 px-4 rounded"
-          >Empezar</button
-        >
-      </div>
-    </section>
-
-    <section class="products py-10">
-      <div
-        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
+  <section class="services py-10 bg-background text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Why choose us</h2>
+      <p class="mb-8">
+        We’ve been serving the Bay Area since 1987. We are a certified Hunter
+        Douglas dealer and we offer free in-home consultations.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
-          products.map((product) => (
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              image={product.image}
+          services.map((service) => (
+            <ServiceFeature
+              title={service.title}
+              subtitle={service.subtitle}
+              icon={service.icon}
             />
           ))
         }
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="services py-10 bg-background text-center">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-4">Why choose us</h2>
-        <p class="mb-8">
-          We’ve been serving the Bay Area since 1987. We are a certified Hunter
-          Douglas dealer and we offer free in-home consultations.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {
-            services.map((service) => (
-              <ServiceFeature
-                title={service.title}
-                subtitle={service.subtitle}
-                icon={service.icon}
-              />
-            ))
-          }
-        </div>
+  <section class="testimonials py-10">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          testimonials.map((testimonial) => (
+            <Testimonial
+              quote={testimonial.quote}
+              author={testimonial.author}
+              image={testimonial.image}
+            />
+          ))
+        }
       </div>
-    </section>
-
-    <section class="testimonials py-10">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {
-            testimonials.map((testimonial) => (
-              <Testimonial
-                quote={testimonial.quote}
-                author={testimonial.author}
-                image={testimonial.image}
-              />
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <Footer />
-  </body>
-</html>
+    </div>
+  </section>
+</SiteLayout>

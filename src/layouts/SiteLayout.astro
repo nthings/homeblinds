@@ -1,0 +1,22 @@
+---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<html>
+    <head>
+        <title>Homeblinds</title>
+        <meta charset="UTF-8" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+    </head>
+    <body class="font-sans text-text bg-background">
+        <Nav />
+        <article>
+            <slot />
+        </article>
+        <Footer />
+    </body>
+</html>
