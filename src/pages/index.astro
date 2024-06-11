@@ -5,6 +5,25 @@ import ProductCard from "../components/ProductCard.astro";
 import ServiceFeature from "../components/ServiceFeature.astro";
 import Testimonial from "../components/Testimonial.astro";
 
+const services = [
+  {
+    title: "Reparación",
+    subtitle: "Reparamos cualquier tipo de persiana o cortina",
+    icon: "fa-screwdriver-wrench",
+  },
+  {
+    title: "Automatización",
+    subtitle: "Automatiza tus persianas y cortinas, Integración con Alexa y Google Home",
+    icon: "fa-award",
+  },
+  {
+    title: "Venta e Instalación",
+    subtitle:
+      "Venta e instalación de persianas, cortinas y toldos a la medida de tus necesidades",
+    icon: "fa-credit-card",
+  },
+];
+
 const products = [
   {
     title: "Enrollables",
@@ -38,8 +57,7 @@ const products = [
   },
 ];
 
-const services = [
-  // { title: 'Free Delivery', subtitle: '', icon: 'fa-truck' },
+const why = [
   {
     title: "Instalación Profesional",
     subtitle: "Instaladores profesionales con años de experiencia",
@@ -83,42 +101,27 @@ const testimonials = [
     style="background-image: url('/images/banner.jpg');"
   >
     <div class="max-w-xl mx-auto">
-      <h1 class="text-5xl font-bold mb-4">
+      <img
+        src="/images/logo.png"
+        alt="Centered Image"
+        class="mx-auto header-shadow"
+        />
+        <!-- class="mx-auto mb-8 header-shadow" -->
+      <!-- <h1 class="text-5xl font-bold mb-4 header-shadow">
         Persianas, Cortinas y Toldos Personalizados
       </h1>
-      <p class="text-lg mb-8">
-        Ofrecemos una gran selección de persianas, estores y contraventanas
+      <p class="text-lg mb-8 header-shadow">
+        Ofrecemos una gran selección de persianas, cortinas y contraventanas
         personalizadas. Elija entre una variedad de estilos y colores para
-        encontrar los tratamientos de ventana perfectos para su hogar.
-      </p>
-
-      <button class="bg-primary text-white py-2 px-4 rounded">Empezar</button>
+        encontrar los productos de ventana perfectos para su hogar
+      </p> -->
     </div>
   </header>
 
-  <section class="products py-10">
-    <div
-      class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-    >
-      {
-        products.map((product) => (
-          <ProductCard
-            title={product.title}
-            price={product.price}
-            image={product.image}
-          />
-        ))
-      }
-    </div>
-  </section>
-
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">Why choose us</h2>
-      <p class="mb-8">
-        We’ve been serving the Bay Area since 1987. We are a certified Hunter
-        Douglas dealer and we offer free in-home consultations.
-      </p>
+      <h2 class="text-3xl font-bold mb-4">Servicios</h2>
+      <p class="mb-8"></p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
           services.map((service) => (
@@ -132,8 +135,46 @@ const testimonials = [
       </div>
     </div>
   </section>
+  
+  <section class="services py-10 bg-secbackground text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Catálogo</h2>
+      <p class="mb-8"></p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          products.map((product) => (
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              image={product.image}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-  <section class="testimonials py-10">
+  <section class="services py-10 bg-background text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">¿Por qué escogernos?</h2>
+      <p class="mb-8">
+        Falta texto aqui
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          why.map((service) => (
+            <ServiceFeature
+              title={service.title}
+              subtitle={service.subtitle}
+              icon={service.icon}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials py-10 bg-secbackground">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -10,6 +10,7 @@ export default {
         secondary: '#0066cc',
         accent: '#cc6600',
         background: '#f8f8f8',
+        secbackground: '#f0f0f0',
         text: '#333333',
       },
       fontFamily: {
