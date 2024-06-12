@@ -1,9 +1,11 @@
 ---
-const { title, price, image } = Astro.props;
+const { id, title, price, image } = Astro.props;
+
+const href = `/producto?id=${id}`;
 ---
 
 <div class="product-card p-4 border rounded text-center">
-    <a href="p/producto">
+    <a href={href}>
         <div class="w-full h-64 overflow-hidden mb-4">
             <img class="w-full h-full object-cover" src={image} alt={title} />
         </div>

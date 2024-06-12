@@ -1,0 +1,49 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { fetchProductById } from "../utils/api";
+
+const productId = Astro.url.searchParams.get("id") || null;
+let product = null;
+
+try {
+  product = await fetchProductById(productId);
+} catch (error) {
+  console.error('Failed to fetch product:', error);
+}
+---
+
+<SiteLayout subtitle={product ? product.title : null}>
+  {product ? (
+    <section class="product-detail py-10 bg-background">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-4">{product.title}</h2>
+        <div class="flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="grid grid-cols-2 gap-2">
+              {product.images.map((image) => (
+                <img
+                  class="w-full h-48 object-cover mb-4"
+                  src={image}
+                  alt={product.title}
+                />
+              ))}
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <p class="text-2xl font-bold text-primary mb-4">
+              {product.price}
+            </p>
+            <p class="mb-4">{product.description}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="product-detail py-10 bg-background">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-4">Producto no encontrado</h2>
+        <p class="mb-4">El producto que buscas no existe.</p>
+      </div>
+    </section>
+  )}
+</SiteLayout>

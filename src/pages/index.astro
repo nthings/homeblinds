@@ -5,94 +5,12 @@ import ProductCard from "../components/ProductCard.astro";
 import ServiceFeature from "../components/ServiceFeature.astro";
 import Testimonial from "../components/Testimonial.astro";
 
-const services = [
-  {
-    title: "Reparación",
-    subtitle: "Reparamos cualquier tipo de persiana o cortina",
-    icon: "fa-screwdriver-wrench",
-  },
-  {
-    title: "Automatización",
-    subtitle: "Automatiza tus persianas y cortinas, Integración con Alexa y Google Home",
-    icon: "fa-award",
-  },
-  {
-    title: "Venta e Instalación",
-    subtitle:
-      "Venta e instalación de persianas, cortinas y toldos a la medida de tus necesidades",
-    icon: "fa-credit-card",
-  },
-];
+import { fetchProducts, fetchServices, fetchWhy, fetchTestimonials } from '../utils/api';
 
-const products = [
-  {
-    title: "Enrollables",
-    price: "Desde $150 m2",
-    image: "/images/roller-shades.jpg",
-  },
-  {
-    title: "Sheer Elegance",
-    price: "Desde $150 m2",
-    image: "/images/sheer-blinds.jpg",
-  },
-  {
-    title: "Panel Japonés",
-    price: "Desde $550 m2",
-    image: "/images/panel.jpg",
-  },
-  {
-    title: "Horizontales de Madera",
-    price: "Desde $300 m2",
-    image: "/images/wooden-blinds.jpg",
-  },
-  {
-    title: "Romanas",
-    price: "Desde $250 m2",
-    image: "/images/roman-shades.jpg",
-  },
-  {
-    title: "Toldos",
-    price: "Desde $1050 m2",
-    image: "/images/awning.jpg",
-  },
-];
-
-const why = [
-  {
-    title: "Instalación Profesional",
-    subtitle: "Instaladores profesionales con años de experiencia",
-    icon: "fa-screwdriver-wrench",
-  },
-  {
-    title: "Garantia De Por Vida",
-    subtitle: "Cobertura completa para tu tranquilidad",
-    icon: "fa-award",
-  },
-  {
-    title: "Financiamiento",
-    subtitle:
-      "Aceptamos cualquier metodo de pago y mensualidades sin intereses",
-    icon: "fa-credit-card",
-  },
-];
-
-const testimonials = [
-  {
-    quote: "Excelente servicio, excelentes precios!",
-    author: "Juan",
-    image: "/images/testimonial1.jpg",
-  },
-  {
-    quote: "Me encantan mis nuevas cortinas!",
-    author: "Emilia",
-    image: "/images/testimonial2.jpg",
-  },
-  {
-    quote: "El mejor lugar para comprar persianas.",
-    author: "David",
-    image: "/images/testimonial3.jpg",
-  },
-];
+const services = await fetchServices();
+const products = await fetchProducts();
+const why = await fetchWhy();
+const testimonials = await fetchTestimonials();
 ---
 
 <SiteLayout>
@@ -136,7 +54,7 @@ const testimonials = [
     </div>
   </section>
   
-  <section class="services py-10 bg-secbackground text-center">
+  <section class="products py-10 bg-secbackground text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4">Catálogo</h2>
       <p class="mb-8"></p>
@@ -144,6 +62,7 @@ const testimonials = [
         {
           products.map((product) => (
             <ProductCard
+              id={product.id}
               title={product.title}
               price={product.price}
               image={product.image}
@@ -151,6 +70,7 @@ const testimonials = [
           ))
         }
       </div>
+      <a href="/catalogo" class="bg-primary text-white py-2 px-4 rounded">Ver más...</a>
     </div>
   </section>
 
@@ -176,7 +96,10 @@ const testimonials = [
 
   <section class="testimonials py-10 bg-secbackground">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">Testimonios</h2>
+      <p class="mb-8">
+        Falta texto aqui
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
           testimonials.map((testimonial) => (
