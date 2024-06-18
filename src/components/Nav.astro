@@ -1,16 +1,66 @@
 ---
+import {
+    Astronav,
+    MenuItems,
+    MenuIcon,
+    Dropdown,
+    DropdownItems,
+} from "astro-navbar";
 import ContactLinks from "./ContactLinks.astro";
 
 const { title } = Astro.props;
 ---
 
-<nav class="bg-primary text-white sticky top-0 z-50">
-    <div class="container mx-auto py-2 flex justify-between items-center">
-        <div class="flex-grow">
-            <a href="/"><h1 class="pl-5 text-xl font-bold">{title}</h1></a>
+<div class="bg-primary text-white lg:flex p-5 gap-5">
+    <Astronav>
+        <div class="flex justify-between items-center w-full">
+            <a href="/"><h1 class="text-xl font-bold">{title}</h1></a>
+            <div class="block lg:hidden">
+                <MenuIcon class="w-6 h-6" />
+            </div>
         </div>
-        <div class="flex-1 flex justify-end flex-shrink-0">
-            <ContactLinks />
-        </div>
-    </div>
-</nav>
+        <MenuItems class="hidden lg:flex lg:items-center w-full">
+            <ul class="flex flex-col lg:flex-row gap-4 lg:gap-8">
+                <li><a href="/nosotros" class="hover:text-gray-300">Nosotros</a></li>
+                <li>
+                    <Dropdown class="group relative z-10">
+                        <button class="flex items-center hover:text-gray-300">
+                            Productos
+                            <svg class="ml-2 w-4 h-4 transform group-hover:rotate-180 transition duration-150 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <DropdownItems class="absolute hidden group-hover:block bg-primary text-white shadow-lg mt-1">
+                            <ul class="py-1">
+                                <li><a href="/menu1" class="block px-4 py-2 hover:bg-gray-700">Menu 1</a></li>
+                                <li><a href="/menu2" class="block px-4 py-2 hover:bg-gray-700">Menu 2</a></li>
+                                <li><a href="/menu3" class="block px-4 py-2 hover:bg-gray-700">Menu 3</a></li>
+                            </ul>
+                        </DropdownItems>
+                    </Dropdown>
+                </li>
+                <li>
+                    <Dropdown class="group relative z-10">
+                        <button class="flex items-center hover:text-gray-300">
+                            Servicios
+                            <svg class="ml-2 w-4 h-4 transform group-hover:rotate-180 transition duration-150 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <DropdownItems class="absolute hidden group-hover:block bg-primary text-white shadow-lg mt-1">
+                            <ul class="py-1">
+                                <li><a href="/service1" class="block px-4 py-2 hover:bg-gray-700">Service 1</a></li>
+                                <li><a href="/service2" class="block px-4 py-2 hover:bg-gray-700">Service 2</a></li>
+                                <li><a href="/service3" class="block px-4 py-2 hover:bg-gray-700">Service 3</a></li>
+                            </ul>
+                        </DropdownItems>
+                    </Dropdown>
+                </li>
+                <li><a href="/blog" class="hover:text-gray-300">Blog</a></li>
+                <li>
+                    <ContactLinks />
+                </li>
+            </ul>
+        </MenuItems>
+    </Astronav>
+</div>

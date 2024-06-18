@@ -48,41 +48,19 @@ export async function fetchServices() {
 
     return [
         {
-            title: "Reparación",
-            subtitle: "Reparamos cualquier tipo de persiana o cortina",
-            icon: "fa-screwdriver-wrench",
+            title: "REPARAMOS TUS PERSIANAS",
+            subtitle: "Reparación de persianas y cortinas de cualquier marca y modelo.",
+            icon: "fa-screwdriver",
         },
         {
-            title: "Automatización",
+            title: "AUTOMATIZACIÓN",
             subtitle: "Automatiza tus persianas y cortinas, Integración con Alexa y Google Home",
-            icon: "fa-award",
+            icon: "fa-robot",
         },
         {
-            title: "Venta e Instalación",
-            subtitle:
-                "Venta e instalación de persianas, cortinas y toldos a la medida de tus necesidades",
-            icon: "fa-credit-card",
-        },
-    ];
-}
-
-export async function fetchWhy() {
-    return [
-        {
-            title: "Instalación Profesional",
+            title: "INSTALACIÓN PROFESIONAL",
             subtitle: "Instaladores profesionales con años de experiencia",
-            icon: "fa-screwdriver-wrench",
-        },
-        {
-            title: "Garantia De Por Vida",
-            subtitle: "Cobertura completa para tu tranquilidad",
-            icon: "fa-award",
-        },
-        {
-            title: "Financiamiento",
-            subtitle:
-                "Aceptamos cualquier metodo de pago y mensualidades sin intereses",
-            icon: "fa-credit-card",
+            icon: "fa-ruler-combined",
         },
     ];
 }
@@ -93,18 +71,33 @@ export async function fetchTestimonials() {
 
     return [
         {
-            quote: "Excelente servicio, excelentes precios!",
-            author: "Juan",
+            quote: "Los planes de financiamiento en HOMEBLINDS me permitieron renovar toda mi casa sin preocupaciones. ¡Tienen un servicio al cliente que no encuentras en otro lugar!",
+            author: "Alberto Mendez Raya",
             image: "/images/testimonial1.jpg",
         },
         {
-            quote: "Me encantan mis nuevas cortinas!",
-            author: "Emilia",
+            quote: "Opté por la automatización de mis cortinas con HOMEBLINDS y fue la mejor decisión. Es increíble como puedo controlar todo con solo un clic. Lo mejor para mí, es que la instalación fue rápida y sin problemas.",
+            author: "Ana Roberta Ruiz",
             image: "/images/testimonial2.jpg",
         },
         {
-            quote: "El mejor lugar para comprar persianas.",
-            author: "David",
+            quote: "Lo que me hizo escoger HOMEBLINDS fue su garantía de por vida, sin embargo, tras 4 años de uso, sus persianas han resistido el paso del tiempo y siguen como nuevas. ¡Realmente estoy satisfecho!",
+            author: "Jorge Abdiel Torres",
+            image: "/images/testimonial3.jpg",
+        },
+        {
+            quote: "HOMEBLINDS transformó mi oficina. La obtención de las persianas fue directa y sin presiones, y la variedad de estilos encajó perfectamente con las necesidades y exigencias que teniamos. ¡Un cambio total!",
+            author: "Miguel Ángel Jiménez",
+            image: "/images/testimonial3.jpg",
+        },
+        {
+            quote: "Después de cotizar en varios lugares, HOMEBLINDS me atrapó por su servicio tan personalizado. Me ayudaron a seleccionar las mejores persianas para mi clima y decoración, honestamente quedé encantada con ellos.",
+            author: "Sofía Guerrero",
+            image: "/images/testimonial3.jpg",
+        },
+        {
+            quote: "En mi vida había tenido un servicio de reparación tan eficiente, detectaron el problema de mis persianas y en menos de 24 horas estaban funcionando perfectamente. Puedo decir que HOMEBLINDS nos brindó un servicio de primera.",
+            author: "Iñaki Loera",
             image: "/images/testimonial3.jpg",
         },
     ];

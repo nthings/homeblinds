@@ -3,13 +3,13 @@ import "../styles/global.css";
 import SiteLayout from "../layouts/SiteLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import ServiceFeature from "../components/ServiceFeature.astro";
+import Process from "../components/Process.astro";
 import Testimonial from "../components/Testimonial.astro";
 
-import { fetchProducts, fetchServices, fetchWhy, fetchTestimonials } from '../utils/api';
+import { fetchProducts, fetchServices, fetchTestimonials } from '../utils/api';
 
 const services = await fetchServices();
 const products = await fetchProducts();
-const why = await fetchWhy();
 const testimonials = await fetchTestimonials();
 ---
 
@@ -24,22 +24,19 @@ const testimonials = await fetchTestimonials();
         alt="Centered Image"
         class="mx-auto header-shadow"
         />
-        <!-- class="mx-auto mb-8 header-shadow" -->
-      <!-- <h1 class="text-5xl font-bold mb-4 header-shadow">
-        Persianas, Cortinas y Toldos Personalizados
-      </h1>
-      <p class="text-lg mb-8 header-shadow">
-        Ofrecemos una gran selección de persianas, cortinas y contraventanas
-        personalizadas. Elija entre una variedad de estilos y colores para
-        encontrar los productos de ventana perfectos para su hogar
-      </p> -->
+      <a href="" class="bg-primary text-white py-2 px-4 rounded">Cotize Ahora</a>
     </div>
   </header>
 
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">Servicios</h2>
-      <p class="mb-8"></p>
+      <h2 class="text-3xl font-bold mb-4">
+        + 20 AÑOS DANDOLE VIDA A AMBIENTES CON LUZ PROPIA
+      </h2>
+      <p class="mb-8">
+Nuestras soluciones en persianas y cortinajes combinan funcionalidad y estilo con la más avanzada tecnología de automatización.
+En Homeblinds, facilitamos su experiencia a través de una instalación impecable y opciones de financiamiento
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
           services.map((service) => (
@@ -50,6 +47,9 @@ const testimonials = await fetchTestimonials();
             />
           ))
         }
+      </div>
+      <div class="mb-8">
+        <a href="" class="bg-primary text-white py-2 px-4 rounded">Conozca más</a>
       </div>
     </div>
   </section>
@@ -70,26 +70,17 @@ const testimonials = await fetchTestimonials();
           ))
         }
       </div>
-      <a href="/catalogo" class="bg-primary text-white py-2 px-4 rounded">Ver más...</a>
+      <a href="/catalogo" class="bg-primary text-white py-2 px-4 rounded">Ver más</a>
     </div>
   </section>
 
+  
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">¿Por qué escogernos?</h2>
-      <p class="mb-8">
-        Falta texto aqui
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {
-          why.map((service) => (
-            <ServiceFeature
-              title={service.title}
-              subtitle={service.subtitle}
-              icon={service.icon}
-            />
-          ))
-        }
+      <h2 class="text-3xl font-bold mb-4">ESCOGA SU ESTILO, NOSOTROS HACEMOS EL RESTO</h2>
+      <Process />
+      <div class="mb-8">
+        <a href="" class="bg-primary text-white py-2 px-4 rounded">Comience Ahora</a>
       </div>
     </div>
   </section>
@@ -97,9 +88,6 @@ const testimonials = await fetchTestimonials();
   <section class="testimonials py-10 bg-secbackground">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">Testimonios</h2>
-      <p class="mb-8">
-        Falta texto aqui
-      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
           testimonials.map((testimonial) => (
@@ -111,6 +99,7 @@ const testimonials = await fetchTestimonials();
           ))
         }
       </div>
+      <a href="" class="bg-primary text-white py-2 px-4 rounded">Cotize Ahora</a>
     </div>
   </section>
 </SiteLayout>
