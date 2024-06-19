@@ -1,69 +1,70 @@
 ---
+const common_step_classes = "flex flex-col items-center";
+const steps = [
+    {
+        title: "COTIZACIÓN",
+        description:
+            "Agende una visita a su domicilio para una cotización precisa y sin compromiso alguno.",
+        large_screen_class: common_step_classes + " mb-28",
+        small_screen_class: common_step_classes + " mr-48 md:mr-80",
+    },
+    {
+        title: "ELECCIÓN",
+        description: "Eliga entre una amplia variedad de estilos y diseños.",
+        large_screen_class: common_step_classes + " mt-28",
+        small_screen_class: common_step_classes + " ml-48 md:ml-80",
+    },
+    {
+        title: "INSTALACIÓN",
+        description:
+            "Rápida y sin complicaciones por parte de nuestros profesionales.",
+        large_screen_class: common_step_classes + " mb-28",
+        small_screen_class: common_step_classes + " mr-48 md:mr-80",
+    },
+    {
+        title: "AUTOMATIZACIÓN",
+        description: "Consulte nuestras opciones de persianas automáticas.",
+        large_screen_class: common_step_classes + " mt-28",
+        small_screen_class: common_step_classes + " ml-48 md:ml-80",
+    },
+];
 ---
-<style>
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-  
-    .steps-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-  
-    .step {
-      flex: 1 1 100%; /* Full width on small screens */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* Ensures content is spread evenly */
-      text-align: center;
-      max-width: 200px;
-      min-height: 200px; /* Minimum height can be adjusted based on content */
-    }
-  
-    .step-circle {
-      width: 200px;
-      height: 200px!important;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: white;
-      position: relative;
-      z-index: 1;
-    }
 
-    .step-desc {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Vertically centers the text in the available space */
-        height: 100%; /* Takes full height of the parent container */
-    }
-  </style>
-  
-  <div class="container">
-    <div class="steps-container space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-row md:justify-between">
-      <div class="step">
-        <div class="step-circle bg-primary">1 - COTIZACIÓN</div>
-        <div class="step-desc">Sin compromiso alguno y a su medida.</div>
-      </div>
-      <div class="step">
-        <div class="step-circle bg-primary">2 - ELECCIÓN</div>
-        <div class="step-desc">Entra una amplia variedad de estilos y diseños.</div>
-      </div>
-      <div class="step">
-        <div class="step-circle bg-primary">3 - INSTALACIÓN</div>
-        <div class="step-desc">Rápida y sin complicaciones por parte de nuestros profesionales.</div>
-      </div>
-      <div class="step">
-        <div class="step-circle bg-primary">4 - AUTOMATIZACIÓN</div>
-        <div class="step-desc">Consulte nuestras opciones de persianas automáticas.</div>
-      </div>
+<div class="container mx-auto py-5">
+    <div class="relative">
+        <!-- Horizontal line for larger screens -->
+        <div
+            class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300 transform -translate-y-1/2"
+        >
+        </div>
+        <!-- Timeline steps for large screens -->
+        <div class="hidden lg:flex justify-between items-center">
+            <!-- Steps with alternating positions -->
+            {
+                steps.map((step, _) => (
+                    <div class={step.large_screen_class}>
+                        <div>{step.title}</div>
+                        <p class="mt-4 max-w-xs">{step.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- Vertical line and steps for small screens -->
+        <div
+            class="lg:hidden absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-300"
+        >
+        </div>
+        <div class="lg:hidden flex flex-col items-center">
+            <!-- Steps with alternating positions -->
+            {
+                steps.map((step, _) => (
+                    <div class={step.small_screen_class}>
+                        <div>{step.title}</div>
+                        <p class="mt-4 max-w-xs">{step.description}</p>
+                    </div>
+                ))
+            }
+        </div>
     </div>
-  </div>
-  
+</div>
