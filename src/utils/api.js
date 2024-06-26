@@ -110,8 +110,15 @@ export async function fetchProductById(id) {
     return {
         title: "Enrollables",
         price: 150,
-        images: ["/images/roller-shades.jpg"],
+        images: ["/images/roller-shades.jpg", "/images/wooden-blinds.jpg"],
         description:
             "Las persianas enrollables son una excelente opción para controlar la entrada de luz en tu hogar. Son fáciles de limpiar y muy duraderas.",
     };
+}
+
+export async function fetchBackgroundImages() {
+    return [
+        "/images/banner.jpg",
+        "/images/roller-shades.jpg",
+    ];
 }

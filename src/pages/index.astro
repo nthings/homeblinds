@@ -1,41 +1,47 @@
 ---
-import "../styles/global.css";
+import BackgroundSlider from "../components/react/BackgroundSlider";
+
 import SiteLayout from "../layouts/SiteLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import ServiceFeature from "../components/ServiceFeature.astro";
 import Process from "../components/Process.astro";
 import Testimonial from "../components/Testimonial.astro";
 
-import { fetchProducts, fetchServices, fetchTestimonials } from '../utils/api';
+import { fetchProducts, fetchServices, fetchTestimonials, fetchBackgroundImages } from "../utils/api";
 
 const services = await fetchServices();
 const products = await fetchProducts();
 const testimonials = await fetchTestimonials();
+const backgroundImages = await fetchBackgroundImages();
 ---
 
 <SiteLayout>
   <header
-    class="banner bg-cover bg-center text-white text-center py-20"
-    style="background-image: url('/images/banner.jpg');"
+    class="dynamic-background banner bg-cover bg-center text-white text-center py-20"
   >
+    <BackgroundSlider client:load images={backgroundImages} interval={3000} className="dynamic-background" />
     <div class="max-w-xl mx-auto">
       <img
         src="/images/logo.png"
         alt="Centered Image"
         class="mx-auto header-shadow"
-        />
-      <a href="" class="bg-primary text-white py-2 px-4 rounded">Cotize Ahora</a>
+      />
+      <a href="" class="bg-primary text-white py-2 px-4 rounded">Cotize Ahora</a
+      >
     </div>
   </header>
 
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4">
-        + 20 AÑOS DANDOLE VIDA A AMBIENTES CON LUZ PROPIA
+        + 30 AÑOS DANDOLE VIDA A AMBIENTES CON LUZ PROPIA
       </h2>
       <p class="mb-8">
-Nuestras soluciones en persianas y cortinajes combinan funcionalidad y estilo con la más avanzada tecnología de automatización.
-En Homeblinds, facilitamos su experiencia a través de una instalación impecable y opciones de financiamiento
+        Nuestras soluciones en persianas y cortinas combinan funcionalidad y
+        estilo con la más avanzada tecnología de automatización. Somos
+        fabricantes directos, lo que nos permite garantizar la máxima calidad en
+        cada producto. Facilitamos su experiencia a través de una instalación
+        impecable y mensualidades sin intereses.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
@@ -49,11 +55,13 @@ En Homeblinds, facilitamos su experiencia a través de una instalación impecabl
         }
       </div>
       <div class="mb-8">
-        <a href="" class="bg-primary text-white py-2 px-4 rounded">Conozca más</a>
+        <a href="" class="bg-primary text-white py-2 px-4 rounded"
+          >Conozca más</a
+        >
       </div>
     </div>
   </section>
-  
+
   <section class="products py-10 bg-secbackground text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4">Catálogo</h2>
@@ -70,17 +78,22 @@ En Homeblinds, facilitamos su experiencia a través de una instalación impecabl
           ))
         }
       </div>
-      <a href="/catalogo" class="bg-primary text-white py-2 px-4 rounded">Ver más</a>
+      <a href="/catalogo" class="bg-primary text-white py-2 px-4 rounded"
+        >Ver más</a
+      >
     </div>
   </section>
 
-  
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">ESCOGA SU ESTILO, NOSOTROS HACEMOS EL RESTO</h2>
+      <h2 class="text-3xl font-bold mb-4">
+        ESCOGA SU ESTILO, NOSOTROS HACEMOS EL RESTO
+      </h2>
       <Process />
       <div class="mb-8">
-        <a href="" class="bg-primary text-white py-2 px-4 rounded">Comience Ahora</a>
+        <a href="" class="bg-primary text-white py-2 px-4 rounded"
+          >Comience Ahora</a
+        >
       </div>
     </div>
   </section>
@@ -99,7 +112,8 @@ En Homeblinds, facilitamos su experiencia a través de una instalación impecabl
           ))
         }
       </div>
-      <a href="" class="bg-primary text-white py-2 px-4 rounded">Cotize Ahora</a>
+      <a href="" class="bg-primary text-white py-2 px-4 rounded">Cotize Ahora</a
+      >
     </div>
   </section>
 </SiteLayout>

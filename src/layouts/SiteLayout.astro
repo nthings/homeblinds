@@ -3,12 +3,7 @@ import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Chat from "../components/Chat.astro";
 
-const { subtitle } = Astro.props;
 let title = "Homeblinds";
-
-if (subtitle) {
-    title = `${title} - ${subtitle}`;
-}
 ---
 
 <html>
