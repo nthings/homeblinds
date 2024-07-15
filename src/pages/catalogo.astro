@@ -38,6 +38,16 @@ const displayProducts = searchQuery ? filteredProducts : paginatedProducts;
             class="w-full border rounded p-2" 
             value={searchQuery}
           />
+          <div class="bg-white rounded mt-4">
+            <h3 class="text-lg font-semibold p-2 border-b">Filtros</h3>
+            
+          </div>
+          <div class="mb-8 pt-6 text-center">
+            <a href="" class="bg-primary text-white py-4 px-12 rounded">
+              <i class="fa fa-magnifying-glass"></i>
+              Buscar
+            </a>
+          </div>
         </div>
         <div class="lg:w-3/4">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

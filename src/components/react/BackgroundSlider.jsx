@@ -24,6 +24,7 @@ const BackgroundSlider = ({ images, interval = 7000, className }) => {
 
       if (element) {
         element.style.backgroundImage = `url(${images[nextIndex]})`;
+        element.style.transition = `background-image 1s ease-in-out`;
       }
     }, interval);
 
