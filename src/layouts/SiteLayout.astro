@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import Chat from "../components/Chat.astro";
+---
+
+<html>
+    <head>
+        <title>Homeblinds</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script is:inline 
+            src="/node_modules/jquery/dist/jquery.min.js"/>
+        <script is:inline type="text/javascript" src="/node_modules/slick-carousel/slick/slick.js"></script>
+
+    </head>
+    <body class="font-sans text-text bg-background text-base">
+        <Nav />
+        <article>
+            <slot />
+        </article>
+        <Footer />
+
+        <Chat />
+    </body>
+</html>

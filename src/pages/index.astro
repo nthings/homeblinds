@@ -1,0 +1,185 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Process from "../components/Process.astro";
+import Testimonial from "../components/Testimonial.astro";
+
+import { fetchHomeProducts, fetchTestimonials } from "../utils/api";
+
+const products = await fetchHomeProducts();
+const testimonials = await fetchTestimonials();
+---
+
+<SiteLayout>
+  <header class="text-center pt-5 pb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="px-10 py-10 text-justify">
+          <h2 class="text-4xl font-bold mb-4 text-strong-blue">
+            MÁS DE 30 AÑOS DANDOLE VIDA A AMBIENTES CON LUZ PROPIA
+          </h2>
+          <p class="md:mb-8 text-2xl">
+            Nuestras soluciones en persianas y cortinas combinan funcionalidad y
+            estilo con la más avanzada tecnología de automatización. Somos
+            fabricantes directos, lo que nos permite garantizar la máxima calidad en
+            cada producto. Facilitamos su experiencia a través de una instalación
+            impecable y mensualidades sin intereses.
+          </p>
+          <a
+            href=""
+            class="md:block mx-auto w-80 hidden text-center border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
+            >Cotiza Ahora</a
+          >
+        </div>
+        <div>
+          <img
+          src="/images/header.png"
+          alt="Homeblinds"
+          class="mx-auto pb-10"/>
+        </div>
+      </div>
+      <a
+        href=""
+        class="md:hidden border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
+        >Cotiza Ahora</a
+      >
+  </header>
+
+  <section class="services text-center">
+    <div class="w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-3">
+        <div class="service-feature text-center bg-background-gray py-5">
+          <i class="flaticon-reparaciones-en-el-hogar text-9xl text-icons-gray"
+          ></i>
+          <h3 class="text-xl font-bold text-strong-blue mb-2">
+            REPARAMOS TUS PERSIANAS
+          </h3>
+          <p class="text-strong-blue mb-2">
+            Reparación de persianas y cortinas de cualquier marca y modelo.
+          </p>
+        </div>
+        <div class="service-feature text-center bg-strong-blue py-5">
+          <i class="flaticon-asistente-de-voz-1 text-9xl text-icons-blue"></i>
+          <h3 class="text-xl font-bold text-white mb-2">AUTOMATIZACIÓN</h3>
+          <p class="text-white mb-2">
+            Automatiza tus persianas y cortinas, integración con Alexa y Google
+            Home.
+          </p>
+        </div>
+        <div class="service-feature text-center bg-background-gray py-5">
+          <i class="flaticon-persianas text-9xl text-icons-gray"></i>
+          <h3 class="text-xl font-bold text-strong-blue mb-2">
+            INSTALACIÓN PROFESIONAL
+          </h3>
+          <p class="text-strong-blue mb-2">
+            Instaladores profesionales con años de experiencia
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products py-10 bg-secbackground text-center">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-strong-blue">CATÁLOGO</h2>
+      <div class="flex mt-8">
+        <div class="slick-previous-arrow w-1/6 hidden lg:block">
+          <i class="text-4xl text-strong-blue">Prev</i>
+        </div>
+        <div class="slick w-full lg:w-4/6">
+          {
+            products.length > 0 ? (
+              products.map((product) => (
+                <ProductCard
+                  id={product.id}
+                  title={product.title}
+                  image={product.image}
+                  price={product.price}
+                />
+              ))
+            ) : (
+              <p>No hay productos disponibles.</p>
+            )
+          }
+        </div>
+        <div class="slick-next-arrow w-1/6 hidden lg:block">
+          <i class="text-4xl text-strong-blue">Next</i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services py-10 bg-background text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">
+        ESCOGA SU ESTILO, NOSOTROS HACEMOS EL RESTO
+      </h2>
+      <Process />
+      <div class="mb-8 pt-6">
+        <a href="" class="bg-strong-blue text-white py-4 px-12 rounded text-lg"
+          >Comience Ahora</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials py-10 bg-secbackground text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Testimonios</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          testimonials.map((testimonial) => (
+            <Testimonial
+              quote={testimonial.quote}
+              author={testimonial.author}
+              image={testimonial.image}
+            />
+          ))
+        }
+      </div>
+      <div class="mb-8 pt-6">
+        <a href="" class="bg-strong-blue text-white py-4 px-12 rounded text-lg"
+          >Cotize Ahora</a
+        >
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+
+<script is:inline>
+  $(document).ready(function () {
+    $(".slick").slick({
+      // normal options...
+      arrows: false,
+      infinite: true,
+      autoplay: true,
+      dots: true,
+      mobileFirst: true,
+      centerMode: true,
+      respondTo: "slider",
+
+      // the magic
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+      ],
+    });
+
+    $(".slick-previous-arrow").click(function () {
+      $(".slick").slick("slickPrev");
+    });
+
+    $(".slick-next-arrow").click(function () {
+      $(".slick").slick("slickNext");
+    });
+  });
+</script>

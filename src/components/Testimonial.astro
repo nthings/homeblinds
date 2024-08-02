@@ -1,0 +1,9 @@
+---
+const { quote, author, image } = Astro.props;
+---
+
+<div class="testimonial p-4 border rounded text-center">
+    <img class="w-16 h-16 rounded-full mx-auto mb-4" src={image} alt={author} />
+    <blockquote class="text-lg italic mb-2">"{quote}"</blockquote>
+    <p class="text-gray-700">- {author}</p>
+</div>

@@ -1,0 +1,39 @@
+---
+import {
+    Astronav,
+    MenuItems,
+} from "astro-navbar";
+import ContactLinks from "./ContactLinks.astro";
+---
+
+<div class="sticky top-0 bg-white shadow-md text-gray p-5 z-50">
+    <Astronav>
+        <div class="flex justify-between items-center w-full">
+            <!-- Left Section: Logo/Title -->
+            <a href="/" class="flex-shrink-0">
+                <h1 class="text-xl font-bold">
+                    <span class="text-light-blue">HOME</span><span class="text-strong-blue">BLINDS</span>
+                </h1>
+            </a>
+            
+            <!-- Right Section: Contact Links and Menu Icon -->
+            <div class="flex items-center ml-auto space-x-4">
+                <div class="text-strong-blue text-2xl">
+                    <ContactLinks />
+                </div>
+                <div class="block lg:hidden text-strong-blue text-3xl">
+                    <i class="flaticon-menu"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Items: Visible on larger screens -->
+        <MenuItems class="hidden lg:flex lg:items-center w-full">
+            <ul class="flex flex-col lg:flex-row gap-4 lg:gap-8">
+                <li>
+                    <!-- Your menu items go here -->
+                </li>
+            </ul>
+        </MenuItems>
+    </Astronav>
+</div>
