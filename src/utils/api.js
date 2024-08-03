@@ -1,4 +1,4 @@
-export async function fetchHomeProducts() {
+export async function fetchProducts() {
     // const res = await fetch('https://api.example.com/products');
     // return res.json();
 

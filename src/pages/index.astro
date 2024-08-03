@@ -4,9 +4,9 @@ import ProductCard from "../components/ProductCard.astro";
 import Process from "../components/Process.astro";
 import Testimonial from "../components/Testimonial.astro";
 
-import { fetchHomeProducts, fetchTestimonials } from "../utils/api";
+import { fetchProducts, fetchTestimonials } from "../utils/api";
 
-const products = await fetchHomeProducts();
+const products = await fetchProducts();
 const testimonials = await fetchTestimonials();
 ---
 
