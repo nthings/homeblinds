@@ -12,12 +12,12 @@ const testimonials = await fetchTestimonials();
 
 <SiteLayout>
   <header class="text-center pt-5 pb-20">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="px-10 py-10 text-justify">
-          <h2 class="text-4xl font-bold mb-4 text-strong-blue">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="px-10 pb-10 text-justify">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-strong-blue">
             MÁS DE 30 AÑOS DANDOLE VIDA A AMBIENTES CON LUZ PROPIA
           </h2>
-          <p class="md:mb-8 text-2xl">
+          <p class="text-2xl lg:mb-8 lg:text-3xl lg:pt-10 pt-5">
             Nuestras soluciones en persianas y cortinas combinan funcionalidad y
             estilo con la más avanzada tecnología de automatización. Somos
             fabricantes directos, lo que nos permite garantizar la máxima calidad en
@@ -26,7 +26,7 @@ const testimonials = await fetchTestimonials();
           </p>
           <a
             href=""
-            class="md:block mx-auto w-80 hidden text-center border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
+            class="md:block mx-auto w-80 hidden text-center border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white mt-14 py-4 px-12 rounded text-2xl"
             >Cotiza Ahora</a
           >
         </div>
@@ -82,10 +82,10 @@ const testimonials = await fetchTestimonials();
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-4 text-strong-blue">CATÁLOGO</h2>
       <div class="flex mt-8">
-        <div class="slick-previous-arrow w-1/6 hidden lg:block">
-          <i class="text-4xl text-strong-blue">Prev</i>
+        <div class="slick-previous-arrow w-1/8 hidden lg:flex justify-center items-center">
+          <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray -rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
         </div>
-        <div class="slick w-full lg:w-4/6">
+        <div class="slick w-full lg:w-6/8">
           {
             products.length > 0 ? (
               products.map((product) => (
@@ -101,8 +101,8 @@ const testimonials = await fetchTestimonials();
             )
           }
         </div>
-        <div class="slick-next-arrow w-1/6 hidden lg:block">
-          <i class="text-4xl text-strong-blue">Next</i>
+        <div class="slick-next-arrow w-1/8 hidden lg:flex justify-center items-center">
+          <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
         </div>
       </div>
     </div>
@@ -110,22 +110,40 @@ const testimonials = await fetchTestimonials();
 
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">
+      <h2 class="text-3xl font-bold mb-4 text-strong-blue">
         ESCOGA SU ESTILO, NOSOTROS HACEMOS EL RESTO
       </h2>
       <Process />
-      <div class="mb-8 pt-6">
-        <a href="" class="bg-strong-blue text-white py-4 px-12 rounded text-lg"
-          >Comience Ahora</a
-        >
-      </div>
     </div>
   </section>
 
-  <section class="testimonials py-10 bg-secbackground text-center">
+  <section class="testimonials my-24 bg-background-gray text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Testimonios</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <h2 class="text-3xl font-bold text-strong-blue text-center pb-16 pt-16">TESTIMONIOS</h2>
+      <div class="flex mt-8">
+        <div class="slick-previous-arrow w-1/8 hidden lg:flex justify-center items-center">
+          <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray -rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
+        </div>
+        <div class="slick w-full lg:w-6/8">
+          {
+            testimonials.length > 0 ? (
+              testimonials.map((testimonial) => (
+                <Testimonial
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  image={testimonial.image}
+                />
+              ))
+            ) : (
+              <p>No hay testimonios.</p>
+            )
+          }
+        </div>
+        <div class="slick-next-arrow w-1/8 hidden lg:flex justify-center items-center">
+          <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
+        </div>
+      </div>
+      <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
           testimonials.map((testimonial) => (
             <Testimonial
@@ -135,10 +153,12 @@ const testimonials = await fetchTestimonials();
             />
           ))
         }
-      </div>
-      <div class="mb-8 pt-6">
-        <a href="" class="bg-strong-blue text-white py-4 px-12 rounded text-lg"
-          >Cotize Ahora</a
+      </div> -->
+      <div class="mb-8 mt-12">
+        <a
+          href=""
+          class="border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
+          >Cotiza Ahora</a
         >
       </div>
     </div>
@@ -148,14 +168,15 @@ const testimonials = await fetchTestimonials();
 <script>
   import $ from "jquery";
   import "slick-carousel";
-  
+
   $(document).ready(function () {
     $(".slick").slick({
+      arrows: false,
       autoplay: true,
       dots: true,
       infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 2,
+      slidesToShow: 3,
+      slidesToScroll: 3,
       responsive: [
         {
           breakpoint: 1024,

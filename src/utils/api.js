@@ -42,45 +42,45 @@ export async function fetchProducts() {
             "colorOptions": ["white", "gray", "black"],
             "priceRange": 550
         },
-        // {
-        //     "id": 4,
-        //     "title": "Horizontales de Madera",
-        //     "price": "Desde $300 m2",
-        //     "image": "/images/wooden-blinds.jpg",
-        //     "roomSuitability": ["living room", "office"],
-        //     "material": "wood",
-        //     "lightControl": "light filtering",
-        //     "privacyLevel": "high",
-        //     "installationType": ["inside mount", "outside mount"],
-        //     "colorOptions": ["brown", "dark brown"],
-        //     "priceRange": 300
-        // },
-        // {
-        //     "id": 5,
-        //     "title": "Romanas",
-        //     "price": "Desde $250 m2",
-        //     "image": "/images/roman-shades.jpg",
-        //     "roomSuitability": ["bedroom", "living room"],
-        //     "material": "fabric",
-        //     "lightControl": "blackout",
-        //     "privacyLevel": "high",
-        //     "installationType": ["inside mount", "outside mount"],
-        //     "colorOptions": ["white", "beige", "gray"],
-        //     "priceRange": 250
-        // },
-        // {
-        //     "id": 6,
-        //     "title": "Toldos",
-        //     "price": "Desde $1050 m2",
-        //     "image": "/images/awning.jpg",
-        //     "roomSuitability": ["outdoor"],
-        //     "material": "fabric",
-        //     "lightControl": "light filtering",
-        //     "privacyLevel": "medium",
-        //     "installationType": ["outside mount"],
-        //     "colorOptions": ["white", "gray", "blue"],
-        //     "priceRange": 1050
-        // }
+        {
+            "id": 4,
+            "title": "Horizontales de Madera",
+            "price": "Desde $300 m2",
+            "image": "/images/wooden-blinds.jpg",
+            "roomSuitability": ["living room", "office"],
+            "material": "wood",
+            "lightControl": "light filtering",
+            "privacyLevel": "high",
+            "installationType": ["inside mount", "outside mount"],
+            "colorOptions": ["brown", "dark brown"],
+            "priceRange": 300
+        },
+        {
+            "id": 5,
+            "title": "Romanas",
+            "price": "Desde $250 m2",
+            "image": "/images/roman-shades.jpg",
+            "roomSuitability": ["bedroom", "living room"],
+            "material": "fabric",
+            "lightControl": "blackout",
+            "privacyLevel": "high",
+            "installationType": ["inside mount", "outside mount"],
+            "colorOptions": ["white", "beige", "gray"],
+            "priceRange": 250
+        },
+        {
+            "id": 6,
+            "title": "Toldos",
+            "price": "Desde $1050 m2",
+            "image": "/images/awning.jpg",
+            "roomSuitability": ["outdoor"],
+            "material": "fabric",
+            "lightControl": "light filtering",
+            "privacyLevel": "medium",
+            "installationType": ["outside mount"],
+            "colorOptions": ["white", "gray", "blue"],
+            "priceRange": 1050
+        }
     ];
 }
 
