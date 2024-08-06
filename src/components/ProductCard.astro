@@ -4,7 +4,7 @@ const { id, title, price, image } = Astro.props;
 const href = `/producto?id=${id}`;
 ---
 
-<div class="product-card p-4 text-center">
+<div class="product-card p-4 text-center h-[450px]">
     <a href={href}>
         <div class="w-full h-64 overflow-hidden mb-4 ">
             <img class="w-3/4 h-full object-cover rounded-xl mx-auto" src={image} alt={title} />
@@ -14,7 +14,7 @@ const href = `/producto?id=${id}`;
 
         <a
         href=""
-        class="border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white rounded py-2 px-4"
+        class="see-more-button border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white rounded py-2 px-4"
         >
             Ver más
         </a>

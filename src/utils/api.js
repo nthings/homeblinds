@@ -84,29 +84,6 @@ export async function fetchProducts() {
     ];
 }
 
-export async function fetchServices() {
-    // const res = await fetch('https://api.example.com/services');
-    // return res.json();
-
-    return [
-        {
-            title: "REPARAMOS TUS PERSIANAS",
-            subtitle: "Reparación de persianas y cortinas de cualquier marca y modelo.",
-            icon: "fa-screwdriver",
-        },
-        {
-            title: "AUTOMATIZACIÓN",
-            subtitle: "Automatiza tus persianas y cortinas, Integración con Alexa y Google Home",
-            icon: "fa-robot",
-        },
-        {
-            title: "INSTALACIÓN PROFESIONAL",
-            subtitle: "Instaladores profesionales con años de experiencia",
-            icon: "fa-ruler-combined",
-        },
-    ];
-}
-
 export async function fetchTestimonials() {
     // const res = await fetch('https://api.example.com/testimonials');
     // return res.json();
@@ -146,21 +123,8 @@ export async function fetchTestimonials() {
 }
 
 export async function fetchProductById(id) {
-    // const res = await fetch(`https://api.example.com/products/${id}`);
-    // return res.json();
-
-    return {
-        title: "Enrollables",
-        price: 150,
-        images: ["/images/roller-shades.jpg", "/images/wooden-blinds.jpg"],
-        description:
-            "Las persianas enrollables son una excelente opción para controlar la entrada de luz en tu hogar. Son fáciles de limpiar y muy duraderas.",
-    };
-}
-
-export async function fetchBackgroundImages() {
-    return [
-        "/images/banner.jpg",
-        "/images/roller-shades.jpg",
-    ];
+    const products = await fetchProducts();
+    return products.find(product => {
+        return product.id == id
+    });
 }

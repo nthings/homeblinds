@@ -2,3 +2,32 @@
 @import "./flaticon/flaticon.css";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+
+html, body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.see-more-button {
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+.testimonial {
+  transition: transform 1s ease-in-out, background-color 1s ease-in-out;
+}
+
+#slick-testimonials .slick-list {
+  padding: 100px 0!important;
+  height: auto!important;
+}
+.slick-center .testimonial {
+  z-index: 999;
+}
+
+.scale-up {
+  transform: scale(1.5);
+}
+
+.scale-down {
+  transform: scale(1);
+}

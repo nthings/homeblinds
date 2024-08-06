@@ -7,14 +7,14 @@ const steps = [
         description:
             "Agende una visita a su domicilio para una cotización precisa y sin compromiso alguno.",
         large_screen_class: common_step_classes,
-        small_screen_class: `${common_step_classes} mr-48 md:mr-80`,
+        small_screen_class: `${common_step_classes} mr-40 md:mr-80`,
     },
     {
         title: "ELECCIÓN",
         icon: "flaticon-preferencia",
         description: "Eliga entre una amplia variedad de estilos y diseños.",
         large_screen_class: common_step_classes,
-        small_screen_class: `${common_step_classes} ml-48 md:ml-80`,
+        small_screen_class: `${common_step_classes} ml-40 md:ml-80`,
     },
     {
         title: "INSTALACIÓN",
@@ -22,14 +22,14 @@ const steps = [
         description:
             "Rápida y sin complicaciones por parte de nuestros profesionales.",
         large_screen_class: common_step_classes,
-        small_screen_class: `${common_step_classes} mr-48 md:mr-80`,
+        small_screen_class: `${common_step_classes} mr-40 md:mr-80`,
     },
     {
         title: "AUTOMATIZACIÓN",
         icon: "flaticon-asistente-de-voz-1",
         description: "Consulte nuestras opciones de persianas automáticas.",
         large_screen_class: common_step_classes,
-        small_screen_class: `${common_step_classes} ml-48 pl-8 md:ml-80 md:pl-0`,
+        small_screen_class: `${common_step_classes} ml-40 md:ml-80`,
     },
 ];
 ---
@@ -124,7 +124,7 @@ const steps = [
         <div class="lg:hidden absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5">
             <div class="flex flex-col items-center my-5 text-light-blue text-4xl font-bold">
                 {steps.map((_, index) => (
-                    <div class={`vertical-stepper-item relative flex-1 first:pt-[125px] pt-[205px]`}>
+                    <div class={`vertical-stepper-item relative flex-1 first:pt-0 pt-[215px]`}>
                         <div class="flex justify-center items-center w-12 h-12 rounded-full mb-1 border-2 border-strong-blue bg-white">
                             {index + 1}
                         </div>
@@ -137,10 +137,10 @@ const steps = [
             {
                 steps.map((step, _) => (
                     <div class={step.small_screen_class}>
-                        <i class={ `${step.icon} text-9xl text-light-blue` }></i>
-                        <div class="text-lg font-bold text-light-blue">{step.title}</div>
+                        <i class={ `${step.icon} text-8xl text-light-blue` }></i>
+                        <div class="text-base font-bold text-light-blue">{step.title}</div>
                         <hr class="w-1/2 border-1 border-light-blue" />
-                        <p class="mt-2 max-w-[150px] h-20">{step.description}</p>
+                        <p class="mt-2 max-w-[100px] h-20">{step.description}</p>
                     </div>
                 ))
             }

@@ -78,35 +78,34 @@ const testimonials = await fetchTestimonials();
     </div>
   </section>
 
-  <section class="products py-10 bg-secbackground text-center">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-4 text-strong-blue">CATÁLOGO</h2>
-      <div class="flex mt-8">
-        <div class="slick-previous-arrow w-1/8 hidden lg:flex justify-center items-center">
-          <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray -rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
-        </div>
-        <div class="slick w-full lg:w-6/8">
-          {
-            products.length > 0 ? (
-              products.map((product) => (
-                <ProductCard
-                  id={product.id}
-                  title={product.title}
-                  image={product.image}
-                  price={product.price}
-                />
-              ))
-            ) : (
-              <p>No hay productos disponibles.</p>
-            )
-          }
-        </div>
-        <div class="slick-next-arrow w-1/8 hidden lg:flex justify-center items-center">
-          <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
-        </div>
+
+  <section class="products py-10 text-center">
+    <h2 class="text-3xl font-bold mb-4 text-strong-blue">CATÁLOGO</h2>
+    <div class="flex mt-8">
+      <div class="slick-previous-arrow w-1/4 hidden lg:flex justify-center items-center">
+        <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray -rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
+      </div>
+      <div id="slick-products" class="slick w-full lg:w-3/4">
+        {
+          products.length > 0 ? (
+            products.map((product) => (
+              <ProductCard
+                id={product.id}
+                title={product.title}
+                image={product.image}
+                price={product.price}
+              />
+            ))
+          ) : (
+            <p>No hay productos disponibles.</p>
+          )
+        }
+      </div>
+      <div class="slick-next-arrow w-1/4 hidden lg:flex justify-center items-center">
+        <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
       </div>
     </div>
-  </section>
+</section>
 
   <section class="services py-10 bg-background text-center">
     <div class="container mx-auto px-4">
@@ -117,14 +116,13 @@ const testimonials = await fetchTestimonials();
     </div>
   </section>
 
-  <section class="testimonials my-24 bg-background-gray text-center">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-strong-blue text-center pb-16 pt-16">TESTIMONIOS</h2>
+  <section class="testimonials mt-20 text-center bg-background-gray">
+      <h2 class="text-3xl font-bold mb-4 text-strong-blue pt-10">TESTIMONIOS DE NUESTROS CLIENTES</h2>
       <div class="flex mt-8">
-        <div class="slick-previous-arrow w-1/8 hidden lg:flex justify-center items-center">
+        <div class="slick-previous-arrow w-1/4 hidden lg:flex justify-center items-center">
           <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray -rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
         </div>
-        <div class="slick w-full lg:w-6/8">
+        <div id="slick-testimonials" class="slick w-full lg:w-3/4">
           {
             testimonials.length > 0 ? (
               testimonials.map((testimonial) => (
@@ -135,33 +133,22 @@ const testimonials = await fetchTestimonials();
                 />
               ))
             ) : (
-              <p>No hay testimonios.</p>
+              <p>No hay testimonios disponibles.</p>
             )
           }
         </div>
-        <div class="slick-next-arrow w-1/8 hidden lg:flex justify-center items-center">
+        <div class="slick-next-arrow w-1/4 hidden lg:flex justify-center items-center">
           <svg class="w-8 h-8 hover:fill-strong-blue fill-icons-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/></svg>
         </div>
       </div>
-      <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {
-          testimonials.map((testimonial) => (
-            <Testimonial
-              quote={testimonial.quote}
-              author={testimonial.author}
-              image={testimonial.image}
-            />
-          ))
-        }
-      </div> -->
-      <div class="mb-8 mt-12">
-        <a
-          href=""
-          class="border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
-          >Cotiza Ahora</a
-        >
-      </div>
-    </div>
+  </section>
+
+  <section class="p-10 text-center bg-background-gray">
+    <a
+      href=""
+      class="border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
+      >Cotiza Ahora</a
+    >
   </section>
 </SiteLayout>
 
@@ -169,14 +156,29 @@ const testimonials = await fetchTestimonials();
   import $ from "jquery";
   import "slick-carousel";
 
-  $(document).ready(function () {
-    $(".slick").slick({
+  declare global {
+    interface JQuery {
+      slick(options?: any): JQuery;
+      slick(method: string, ...args: any[]): JQuery;
+    }
+  }
+
+  $(function () {
+    const commonSlickOptions = {
+      centerMode: true,
+      centerPadding: 0,
       arrows: false,
       autoplay: true,
       dots: true,
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 3,
+      autoplaySpeed: 5000,
+      adaptiveHeight: true,
+    }
+
+    $("#slick-products").slick({
+      ...commonSlickOptions,
       responsive: [
         {
           breakpoint: 1024,
@@ -202,12 +204,82 @@ const testimonials = await fetchTestimonials();
       ]
     });
 
-    $(".slick-previous-arrow").click(function () {
+    $("#slick-testimonials").slick({
+      ...commonSlickOptions,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        },
+      ]
+    });
+
+    $(".slick-previous-arrow").on("click", function () {
       $(".slick").slick("slickPrev");
     });
 
-    $(".slick-next-arrow").click(function () {
+    $(".slick-next-arrow").on("click", function () {
       $(".slick").slick("slickNext");
+    });
+
+    function productsButtonToBlue() {
+      $(".slick-center .see-more-button").addClass("text-white bg-strong-blue");
+      $(".slick-center .see-more-button").removeClass("text-strong-blue bg-white");
+    }
+
+    function productsButtonToWhite() {
+      $(".slick-center .see-more-button").addClass("text-strong-blue bg-white");
+      $(".slick-center .see-more-button").removeClass("text-white bg-strong-blue");
+    }
+
+    function testimonialToStrongBlue() {
+      const windowWidth = $(window).width()!;
+      if (windowWidth < 600) {
+        $(".slick-center .testimonial").addClass("bg-strong-blue");
+        $(".slick-center .testimonial").removeClass("bg-light-blue");
+      } else {
+        $(".slick-center .testimonial").addClass("bg-strong-blue scale-up");
+        $(".slick-center .testimonial").removeClass("bg-light-blue scale-down");
+      }
+    }
+
+    function testimonialToLightBlue() {
+      const windowWidth = $(window).width()!;
+      if (windowWidth < 600) {
+        $(".slick-center .testimonial").addClass("bg-light-blue");
+        $(".slick-center .testimonial").removeClass("bg-strong-blue");
+      } else {
+        $(".slick-center .testimonial").addClass("bg-light-blue scale-down");
+        $(".slick-center .testimonial").removeClass("bg-strong-blue scale-up");
+      }
+    }
+
+    testimonialToStrongBlue();
+    
+    $(".slick").on("afterChange", function(event, slick, currentSlide, nextSlide){
+      // Products button animation
+      productsButtonToWhite();
+
+      // Testimonial animation
+      testimonialToStrongBlue();
+    });
+
+    $(".slick").on("beforeChange", function(event, slick, currentSlide, nextSlide){
+      // Products button animation
+      productsButtonToBlue();
+
+      // Testimonial animation
+      testimonialToLightBlue();
     });
   });
 </script>

@@ -19,21 +19,20 @@ import ContactLinks from "./ContactLinks.astro";
             <!-- Right Section: Contact Links and Menu Icon -->
             <div class="flex items-center ml-auto space-x-4">
                 <div class="text-strong-blue text-2xl">
-                    <ContactLinks />
+                    <ContactLinks hideSocialIcons="true"/>
                 </div>
-                <div class="block lg:hidden text-strong-blue text-3xl">
+                <!-- <div class="block lg:hidden text-strong-blue text-3xl">
                     <i class="flaticon-menu"></i>
-                </div>
+                </div> -->
             </div>
         </div>
         
         <!-- Menu Items: Visible on larger screens -->
-        <MenuItems class="hidden lg:flex lg:items-center w-full">
+        <!-- <MenuItems class="hidden lg:flex lg:items-center w-full">
             <ul class="flex flex-col lg:flex-row gap-4 lg:gap-8">
                 <li>
-                    <!-- Your menu items go here -->
                 </li>
             </ul>
-        </MenuItems>
+        </MenuItems> -->
     </Astronav>
 </div>

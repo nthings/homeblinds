@@ -1,13 +1,21 @@
 ---
-import Slideshow from "../components/react/Slideshow";
-import SiteLayout from "../layouts/SiteLayout.astro";
-import { fetchProductById } from "../utils/api";
+import Slideshow from "../../components/react/Slideshow";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { fetchProducts, fetchProductById } from "../../utils/api";
 
-const productId = Astro.url.searchParams.get("id") || null;
-let product = null;
+export async function getStaticPaths() {
+  return fetchProducts().then((products) => {
+    return products.map((product) => ({
+      params: { id: product.id.toString() },
+    }));
+  });
+}
+
+const { id } = Astro.params;
+let product: any = null;
 
 try {
-  product = await fetchProductById(productId);
+  product = await fetchProductById(id);
 } catch (error) {
   console.error('Failed to fetch product:', error);
 }
@@ -19,10 +27,10 @@ try {
         <h2 class="text-3xl font-bold mb-4">{product.title}</h2>
         <div class="flex flex-col lg:flex-row gap-8">
           <div class="lg:w-1/2">
-            <Slideshow client:load images={product.images} />
+            <Slideshow client:load images={[product.image]} />
           </div>
           <div class="lg:w-1/2">
-            <p class="text-2xl font-bold text-primary mb-4">${product.price}</p>
+            <p class="text-2xl font-bold text-primary mb-4">{product.price}</p>
             <p class="mb-4">{product.description}</p>
           </div>
         </div>
