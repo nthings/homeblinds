@@ -1,0 +1,149 @@
+---
+const common_step_classes = "flex flex-col items-center";
+const steps = [
+    {
+        title: "COTIZACIÓN",
+        icon: "flaticon-lista-de-precios",
+        description:
+            "Agende una visita a su domicilio para una cotización precisa y sin compromiso alguno.",
+        large_screen_class: common_step_classes,
+        small_screen_class: `${common_step_classes} mr-40 md:mr-80`,
+    },
+    {
+        title: "ELECCIÓN",
+        icon: "flaticon-preferencia",
+        description: "Eliga entre una amplia variedad de estilos y diseños.",
+        large_screen_class: common_step_classes,
+        small_screen_class: `${common_step_classes} ml-40 md:ml-80`,
+    },
+    {
+        title: "INSTALACIÓN",
+        icon: "flaticon-persianas",
+        description:
+            "Rápida y sin complicaciones por parte de nuestros profesionales.",
+        large_screen_class: common_step_classes,
+        small_screen_class: `${common_step_classes} mr-40 md:mr-80`,
+    },
+    {
+        title: "AUTOMATIZACIÓN",
+        icon: "flaticon-asistente-de-voz-1",
+        description: "Consulte nuestras opciones de persianas automáticas.",
+        large_screen_class: common_step_classes,
+        small_screen_class: `${common_step_classes} ml-40 md:ml-80`,
+    },
+];
+---
+
+<style scoped>
+.horizontal-stepper-item::before,
+.horizontal-stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #0094C5;
+  width: 100%;
+  top: 22px;
+  z-index: -1;
+}
+
+.horizontal-stepper-item::before {
+  left: -50%;
+}
+
+.horizontal-stepper-item::after {
+  left: 50%;
+}
+
+.horizontal-stepper-item:first-child::before {
+  content: none;
+}
+.horizontal-stepper-item:last-child::after {
+  content: none;
+}
+
+.vertical-stepper-item::before,
+.vertical-stepper-item::after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid #0094C5;
+  height: 100%;
+  left: 22.5px;
+  z-index: -1;
+}
+
+.vertical-stepper-item::before {
+  top: -20%;
+}
+
+.vertical-stepper-item::after {
+  bottom: -90%;
+}
+
+.vertical-stepper-item:first-child::before {
+  content: none;
+}
+
+.vertical-stepper-item:last-child::after {
+  content: none;
+}
+
+
+</style>
+
+<div class="container mx-auto py-5 lg:h-[325px]">
+    <div class="relative w-full h-full">
+        <!-- Timeline steps for large screens -->
+        <div class="hidden lg:flex justify-between items-center">
+            <!-- Steps with alternating positions -->
+            {
+                steps.map((step, _) => (
+                    <div class={step.large_screen_class}>
+                        <i class={ `${step.icon} text-9xl text-light-blue` }></i>
+                        <div class="text-lg font-bold text-light-blue">{step.title}</div>
+                        <hr class="w-1/2 border-1 border-light-blue" />
+                        <p class="mt-2 max-w-xs h-20">{step.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+        <!-- Horizontal line for larger screens -->
+        <div class="hidden lg:block absolute left-0 right-0 h-0.5 transform -translate-y-1/2 pt-20">
+            <div class="flex justify-between my-5 text-light-blue text-4xl font-bold">
+                {
+                    steps.map((_, index) => (
+                        <div class="horizontal-stepper-item flex flex-col items-center relative flex-1">
+                            <div class="flex justify-center items-center w-12 h-12 rounded-full mb-1 border-2 border-strong-blue bg-white">
+                                {index + 1}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Vertical line and steps for small screens -->
+        <div class="lg:hidden absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5">
+            <div class="flex flex-col items-center my-5 text-light-blue text-4xl font-bold">
+                {steps.map((_, index) => (
+                    <div class={`vertical-stepper-item relative flex-1 first:pt-0 pt-[215px]`}>
+                        <div class="flex justify-center items-center w-12 h-12 rounded-full mb-1 border-2 border-strong-blue bg-white">
+                            {index + 1}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+        <div class="lg:hidden flex flex-col items-center">
+            <!-- Steps with alternating positions -->
+            {
+                steps.map((step, _) => (
+                    <div class={step.small_screen_class}>
+                        <i class={ `${step.icon} text-8xl text-light-blue` }></i>
+                        <div class="text-base font-bold text-light-blue">{step.title}</div>
+                        <hr class="w-1/2 border-1 border-light-blue" />
+                        <p class="mt-2 max-w-[100px] h-20">{step.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
