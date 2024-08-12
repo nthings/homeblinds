@@ -4,15 +4,14 @@ import ContactLinks from '../components/ContactLinks.astro';
 
 <footer class="bg-strong-blue text-white py-4">
         <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div class="pl-5">
+            <div class="lg:pl-10 pt-3 text-center lg:text-left">
                 <h1 class="text-xl font-bold">
                     <span class="text-white">HOMEBLINDS</span>
                 </h1>
                 <p>© 2024 Homeblinds. Todos los derechos reservados.</p>
             </div>
             <div class="p-2 mx-auto">
-                <ContactLinks />
+                <ContactLinks alwaysShowPhone="true"/>
             </div>
         </div>
-    <!-- </div>  -->
 </footer>

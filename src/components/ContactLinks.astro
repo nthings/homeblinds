@@ -1,12 +1,13 @@
 ---
-let {hideSocialIcons = false} = Astro.props
+let {hideSocialIcons = false, alwaysShowPhone = false} = Astro.props
 
 hideSocialIcons = hideSocialIcons === 'true'
+alwaysShowPhone = alwaysShowPhone === 'true'
 ---
 
 <a href="tel:6181224760" class="flex items-center space-x-2">
     <i class="flaticon-llamada-telefonica"></i>
-    <span class="font-semibold hidden lg:block">618 122 4760</span>
+    <span class={alwaysShowPhone ? "font-semibold" : "font-semibold hidden lg:block"}>618 122 4760</span>
 </a>
 <div class={hideSocialIcons ? 'hidden' : `p-2 grid grid-cols-3`}>
     <a href="#">

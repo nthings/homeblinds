@@ -20,7 +20,12 @@ html, body {
   padding: 100px 0!important;
   height: auto!important;
 }
-.slick-center .testimonial {
+
+.slick-slide {
+  z-index: 1;
+}
+
+.slick-center {
   z-index: 999;
 }
 
