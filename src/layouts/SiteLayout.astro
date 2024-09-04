@@ -10,6 +10,16 @@ import Chat from "../components/Chat.astro";
         <title>Homeblinds</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            declare global {
+                interface Window {
+                    va: any;
+                    vaq: any[];
+                }
+            }
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
     </head>
     <body class="font-sans text-text bg-background text-base flex flex-col min-h-screen">
         <Nav />
