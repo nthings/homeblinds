@@ -2,7 +2,8 @@
 import '../styles/global.css';
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
-import Chat from "../components/Chat.astro";
+
+const isDev = import.meta.env.DEV
 ---
 
 <html>
@@ -19,8 +20,10 @@ import Chat from "../components/Chat.astro";
             }
             window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
         </script>
-        <script defer src="/_vercel/insights/script.js"></script>
-        <script defer src="/_vercel/speed-insights/script.js"></script>
+        { !isDev && 
+            <script defer src="/_vercel/insights/script.js"></script>
+            <script defer src="/_vercel/speed-insights/script.js"></script>
+        }
     </head>
     <body class="font-sans text-text bg-background text-base flex flex-col min-h-screen">
         <Nav />

@@ -11,7 +11,7 @@ const testimonials = await fetchTestimonials();
 ---
 
 <SiteLayout>
-  <header class="text-center pt-5 pb-20">
+  <header class="lg:h-[calc(100vh-80px)] text-center lg:mt-16 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="px-10 pb-10 text-justify">
           <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-strong-blue">
@@ -27,21 +27,21 @@ const testimonials = await fetchTestimonials();
           <a
             href="https://wa.me/+526181224760" 
             target="_blank"
-            class="md:block mx-auto w-80 hidden text-center border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white mt-14 py-4 px-12 rounded text-2xl"
+            class="lg:block mx-auto w-80 hidden text-center border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white mt-14 py-4 px-12 rounded text-2xl"
             >Cotiza Ahora</a
           >
         </div>
-        <div>
-          <img
+        <div class="flex justify-center items-center">
+          <img 
           src="/images/header.png"
           alt="Homeblinds"
-          class="mx-auto pb-10"/>
+          class="pb-10 max-h-[1050px]"/>
         </div>
       </div>
       <a
         href="https://wa.me/+526181224760" 
         target="_blank"
-        class="md:hidden border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
+        class="lg:hidden border-solid border-2 border-strong-blue bg-white text-strong-blue hover:bg-strong-blue hover:text-white py-4 px-12 rounded text-2xl"
         >Cotiza Ahora</a
       >
   </header>
