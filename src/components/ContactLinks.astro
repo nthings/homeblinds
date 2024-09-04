@@ -1,22 +1,24 @@
 ---
-let {hideSocialIcons = false, alwaysShowPhone = false} = Astro.props
+let {hideSocialIcons = false, alwaysShowPhone = false, displayMode = "vertical"} = Astro.props
 
 hideSocialIcons = hideSocialIcons === 'true'
 alwaysShowPhone = alwaysShowPhone === 'true'
 ---
 
-<a href="tel:6181224760" class="flex items-center space-x-2">
-    <i class="flaticon-llamada-telefonica"></i>
-    <span class={alwaysShowPhone ? "font-semibold" : "font-semibold hidden lg:block"}>618 122 4760</span>
-</a>
-<div class={hideSocialIcons ? 'hidden' : `p-2 grid grid-cols-3`}>
-    <a href="#">
-        <i class="text-3xl flaticon-facebook"></i>
+<div class={displayMode == "horizontal" ? 'flex flex-col lg:flex-row items-center lg:space-x-4' : ''}>
+    <a href="tel:6181224760" class="flex items-center space-x-2">
+        <i class="flaticon-llamada-telefonica"></i>
+        <span class={alwaysShowPhone ? "font-semibold" : "font-semibold hidden lg:block"}>618 122 4760</span>
     </a>
-    <a href="#">
-        <i class="text-3xl flaticon-instagram"></i>
-    </a>
-    <a href="#">
-        <i class="text-3xl flaticon-whatsapp"></i>
-    </a>
+    <div class={hideSocialIcons ? 'hidden' : `p-2 grid grid-cols-3 lg:flex lg:space-x-4 mt-4 lg:mt-0 items-center`}>
+        <a href="https://facebook.com/homeblindsdgo" target="_blank">
+            <i class="text-4xl flaticon-facebook"></i>
+        </a>
+        <a href="https://instagram.com/homeblindsdgo" target="_blank">
+            <i class="text-4xl flaticon-instagram"></i>
+        </a>
+        <a href="https://wa.me/+526181224760" target="_blank">
+            <i class="text-4xl flaticon-whatsapp"></i>
+        </a>
+    </div>
 </div>

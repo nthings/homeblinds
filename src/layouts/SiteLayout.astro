@@ -11,9 +11,9 @@ import Chat from "../components/Chat.astro";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body class="font-sans text-text bg-background text-base">
+    <body class="font-sans text-text bg-background text-base flex flex-col min-h-screen">
         <Nav />
-        <article>
+        <article class="flex-grow">
             <slot />
         </article>
         <Footer />

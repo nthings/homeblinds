@@ -21,12 +21,14 @@ html, body {
   height: auto!important;
 }
 
-.slick-slide {
+.slick-slide .testimonial {
   z-index: 1;
+  position: relative;
 }
 
-.slick-center {
+.slick-center .testimonial {
   z-index: 999;
+  position: relative;
 }
 
 .scale-up {
