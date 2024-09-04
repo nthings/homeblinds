@@ -1,9 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
+  <defs>
     <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
+      .cls-1 {
+        fill: url(#Degradado_sin_nombre_5);
+      }
+
+      .cls-2 {
+        fill: #0d3068;
+      }
+
+      .cls-3 {
+        fill: #002d5c;
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre_5-3);
+      }
+
+      .cls-5 {
+        fill: url(#Degradado_sin_nombre_5-2);
+      }
     </style>
+    <linearGradient id="Degradado_sin_nombre_5" data-name="Degradado sin nombre 5" x1="76.78" y1="18.47" x2="48.47" y2="34.27" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0077b0"/>
+      <stop offset="1" stop-color="#00598f"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_5-2" data-name="Degradado sin nombre 5" x1="73.81" y1="13.15" x2="45.5" y2="28.95" xlink:href="#Degradado_sin_nombre_5"/>
+    <linearGradient id="Degradado_sin_nombre_5-3" data-name="Degradado sin nombre 5" x1="76.1" y1="105.39" x2="31.34" y2="101.44" xlink:href="#Degradado_sin_nombre_5"/>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Capa_1">
+      <g>
+        <polygon class="cls-3" points="103.02 38.39 103.02 57.72 183.17 86.44 183.17 76.4 103.02 38.39"/>
+        <polygon class="cls-3" points="103.02 67.67 183.17 90.88 183.17 100.51 103.02 86.93 103.02 67.67"/>
+        <polygon class="cls-2" points="103.02 96.81 103.02 116.23 183.17 114.58 183.17 104.71 103.02 96.81"/>
+        <polygon class="cls-2" points="103.02 125.94 103.02 145.52 183.17 128.75 183.17 119.02 103.02 125.94"/>
+        <polygon class="cls-1" points="15 46.77 101.09 4.04 101.16 11.04 15 51.87 15 46.77"/>
+        <path class="cls-3" d="M100.71,19.92l81.94,41.3c.79.4,1.33,1.15,1.46,2.03l.41,2.74c.05.36-.32.64-.65.48L100.71,26.5v-6.58Z"/>
+        <polygon class="cls-3" points="100.85 195.23 185.97 150.95 185.97 147.9 100.77 189.19 100.85 195.23"/>
+        <path class="cls-2" d="M176.7,58.94c.16.12,0,76.4,0,76.4l1.3.19V58.94h-1.3Z"/>
+        <polygon class="cls-5" points="34 37.34 34 33.39 25.34 38.39 25.34 41.64 34 37.34"/>
+        <path class="cls-4" d="M14.62,59.28v91.34l86.23,44.6V19.92L14.62,59.28ZM49.98,101.52l-21.03,2.19v-27.67l21.03-8.76v34.24ZM86.24,97.81l-30.15,3.14v-35.94l30.15-12.56v45.37Z"/>
+        <polygon class="cls-3" points="101.09 4.22 101.16 11.04 185.97 50.78 186 45.62 101.45 4.04 101.09 4.22"/>
+        <path class="cls-2" d="M177.48,134.92l-.31-.03c-1.32-.13-2.4.8-2.4,2.06s1.07,2.41,2.4,2.56l.31.04c1.34.15,2.45-.77,2.45-2.05s-1.11-2.44-2.45-2.57ZM177.45,138.88l-.22-.03c-.95-.11-1.72-.93-1.72-1.83s.77-1.56,1.72-1.47l.22.02c.96.09,1.76.92,1.76,1.84s-.79,1.58-1.76,1.47Z"/>
+      </g>
+    </g>
+  </g>
 </svg>
