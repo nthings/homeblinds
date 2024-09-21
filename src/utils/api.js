@@ -106,7 +106,7 @@ export async function fetchProducts() {
             "slug": "romanas",
             "title": "Romanas",
             "price": "Desde $1900 m2",
-            "image": [
+            "images": [
                 "/images/romanas/1.jpg",
                 "/images/romanas/2.jpg",
                 "/images/romanas/3.jpg",
@@ -120,7 +120,7 @@ export async function fetchProducts() {
             "slug": "toldos",
             "title": "Toldos",
             "price": "Desde $1600 m2",
-            "image": [
+            "images": [
                 "/images/toldos/1.jpg",
                 "/images/toldos/2.jpg",
                 "/images/toldos/3.jpg",
