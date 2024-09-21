@@ -26,7 +26,7 @@ try {
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-bold mb-4 text-strong-blue">{product.title}</h2>
       <div class="flex flex-col gap-8">
-        <Slideshow client:load images={[product.image]} />
+        <Slideshow client:load images={product.images} />
         <p class="text-4xl font-bold text-primary mb-4 text-light-blue">{product.price}</p>
         <p class="text-2xl mb-4">{product.description}</p>
         <a
