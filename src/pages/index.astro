@@ -94,7 +94,7 @@ const testimonials = await fetchTestimonials();
               <ProductCard
                 slug={product.slug}
                 title={product.title}
-                image={product.images[0]}
+                image={product.images ? product.images[0] : ''}
                 price={product.price}
               />
             ))
